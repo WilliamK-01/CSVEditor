@@ -22,25 +22,7 @@ cd local-react-sqlite
 ./scripts/setup.ps1
 ```
 
-## Run both frontend + backend
-
-### Linux / macOS
-
-```bash
-cd local-react-sqlite
-./scripts/start.sh
-```
-
-### Windows (PowerShell)
-
-```powershell
-cd local-react-sqlite
-./scripts/start.ps1
-```
-
-Then open `http://127.0.0.1:5173`.
-
-## Run separately (optional)
+## Run
 
 ### Backend
 
@@ -62,6 +44,8 @@ cd local-react-sqlite
 cd local-react-sqlite/frontend
 npm run dev
 ```
+
+Then open `http://127.0.0.1:5173`.
 
 ## What this includes
 

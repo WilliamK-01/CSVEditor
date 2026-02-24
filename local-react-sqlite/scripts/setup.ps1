@@ -15,6 +15,5 @@ Pop-Location
 
 Write-Host ''
 Write-Host 'Setup complete.'
-Write-Host "Run both: $Root\scripts\start.ps1"
-Write-Host "Run backend only: $Venv\Scripts\uvicorn.exe main:app --reload --host 127.0.0.1 --port 8000 --app-dir $Backend"
-Write-Host "Run frontend only: cd $Frontend; npm run dev"
+Write-Host "Run backend: $Venv\Scripts\uvicorn.exe main:app --reload --host 127.0.0.1 --port 8000 --app-dir $Backend"
+Write-Host "Run frontend: cd $Frontend; npm run dev"

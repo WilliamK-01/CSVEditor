@@ -16,6 +16,5 @@ npm install
 
 echo ""
 echo "Setup complete."
-echo "Run both: $ROOT_DIR/scripts/start.sh"
-echo "Run backend only: $VENV_DIR/bin/uvicorn main:app --reload --host 127.0.0.1 --port 8000 --app-dir $BACKEND_DIR"
-echo "Run frontend only: cd $FRONTEND_DIR && npm run dev"
+echo "Run backend: $VENV_DIR/bin/uvicorn main:app --reload --host 127.0.0.1 --port 8000 --app-dir $BACKEND_DIR"
+echo "Run frontend: cd $FRONTEND_DIR && npm run dev"
