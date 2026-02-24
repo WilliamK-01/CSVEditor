@@ -33,6 +33,10 @@ class CoreTests(unittest.TestCase):
     def test_money_round(self):
         self.assertEqual(money2(Decimal("1.005")), Decimal("1.01"))
 
+    def test_money_round_int(self):
+        self.assertEqual(money2(0), Decimal("0.00"))
+
+
 
 if __name__ == "__main__":
     unittest.main()

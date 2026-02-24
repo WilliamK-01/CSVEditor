@@ -391,7 +391,7 @@ if nav_choice == "CSV Editor":
             st.dataframe(
                 view_df[["id", "date", "description", "category", "amount", "running", "verified", "status"]].style.map(amount_color, subset=["amount", "running"]),
                 hide_index=True,
-                use_container_width=True,
+                width="stretch",
             )
 
             st.subheader("Editable transactions")
@@ -399,7 +399,7 @@ if nav_choice == "CSV Editor":
                 view_df,
                 hide_index=True,
                 num_rows="dynamic",
-                use_container_width=True,
+                width="stretch",
                 column_config={
                     "date": st.column_config.TextColumn("Date"),
                     "description": st.column_config.TextColumn("Description"),
@@ -485,7 +485,7 @@ if nav_choice == "Reports":
         st.caption("Tip: map your categories using names such as VAT Output, VAT Input, PAYE, UIF, and SDL for better estimates.")
 
         report = tax_report(all_df)
-        st.dataframe(report.style.map(amount_color, subset=["Value"]), hide_index=True, use_container_width=True)
+        st.dataframe(report.style.map(amount_color, subset=["Value"]), hide_index=True, width="stretch")
 
         trend = all_df.copy()
         trend["month"] = pd.to_datetime(trend["date"], format="%Y/%m/%d", errors="coerce").dt.strftime("%Y-%m")
@@ -498,5 +498,5 @@ if nav_choice == "Reports":
                 .sort_values("month")
             )
             st.subheader("Monthly net trend")
-            st.dataframe(monthly, hide_index=True, use_container_width=True)
+            st.dataframe(monthly, hide_index=True, width="stretch")
             st.line_chart(monthly.set_index("month"))
