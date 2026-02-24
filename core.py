@@ -43,8 +43,9 @@ def parse_decimal(s: str) -> Decimal:
     return Decimal(s)
 
 
-def money2(d: Decimal) -> Decimal:
-    return d.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+def money2(d: Decimal | int | float | str) -> Decimal:
+    value = d if isinstance(d, Decimal) else Decimal(str(d))
+    return value.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
 
 def normalize_date(s: str) -> str:
